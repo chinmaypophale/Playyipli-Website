@@ -1,0 +1,56 @@
+/*-----------------------
+    Footer Area
+--------------------------*/
+.footer-area{
+    background-color: #282731;
+}
+.social-icon{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    li{
+        display: inline-block;
+        margin: 0 5px;
+        a{
+            @include transition($transition);
+           color: $base-color;
+           border-radius: 50%;
+           font-size: 20px;
+           display: block;
+           width: 50px;
+           height: 50px;
+           text-align: center;
+           line-height: 50px;
+           background-color: $white;
+           position: relative;
+           z-index: 0;
+           &:after{
+               position: absolute;
+               left:0;
+               top: 0;
+               width: 100%;
+               height: 100%;
+               background-color: $base-color;
+               content: '';
+               z-index: -1;
+               visibility: hidden;
+               opacity: 0;
+               @include transform(scale(0));
+               border-radius: 50%;
+               @include transition($transition);
+           }
+           &:hover{
+               color: $white;
+               &:after{
+                   visibility: visible;
+                   opacity: 1;
+                   @include transform(scale(1));
+               }
+           }
+        }
+    }
+}
+.copyright-text{
+    font-size: 14px;
+    color: rgba($white,.7);
+}

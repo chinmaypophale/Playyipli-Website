@@ -1,0 +1,62 @@
+/*----------------------------
+    Accordion Area
+----------------------------*/
+.faq-area{
+    .right-content-area{
+        .img-wrapper{
+            animation: updown 5s ease-in 2s infinite;
+        }
+    }
+}
+.accordion-wrapper{
+    .card{
+        background-color: transparent;
+        border: none;
+        &:last-child{
+            .card-header{
+                a{
+                    margin-bottom: 0;
+                }
+            }
+            .card-body{
+                margin-bottom: 0;
+            }
+        }
+        .card-header{
+            background-color: transparent;
+            border: none;
+            padding: 0;
+            a{
+                font-size: 18px;
+                background-color: #fafafa;
+                line-height: 28px;
+                display: block;
+                padding: 15px 30px 15px 45px;
+                position: relative;
+                z-index: 0;
+                font-weight: 600;
+                cursor: pointer;
+                margin-bottom: 20px;
+                @include transition($transition);
+                &:after{
+                    position: absolute;
+                    left: 20px;
+                    top: 15px;
+                    @include fontawesomeIcon("\f105");
+                }
+                &[aria-expanded="true"]{
+                    margin-bottom: 0px;
+                    color: $base-color;
+                    &:after{
+                        content: "\f107";
+                    }
+                }
+            }
+        }
+        .card-body{
+            background-color: #fafafa;
+            margin-bottom: 20px;
+            padding: 2px 30px 22px 45px;
+        }
+    }
+}

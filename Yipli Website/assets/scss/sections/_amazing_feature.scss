@@ -1,0 +1,89 @@
+/*-----------------------------
+    Amazing Feature
+-----------------------------*/
+.amazing-feature-area{
+    &.style-03{
+        padding-top: 120px;
+        padding-bottom: 100px;
+    }
+    &.amazing-feature-bg{
+        background-image: url(../img/bg/amazing-bg-2.png);
+    }
+    position: relative;
+    z-index: 0;
+    &.with-shape{
+        margin-top: 270px;
+        padding-top: 250px;
+    }
+    .amazing-top-shape{
+        position: absolute;
+        top: -200px;
+        left: 0;
+    }
+}
+
+.single-amazing-feature-item{
+    text-align: center;
+    &.white{
+        &:hover{
+            .content{
+                .title{
+                    color: $white;
+                }
+            }
+        }
+        .icon{
+            background-image: unset;
+            background-color: $white;
+            color: $base-color;
+        }
+        .content{
+            .title{
+                color: $white;
+            }
+            p{
+                color: rgba($white,.8);
+            }
+        }
+    }
+    &:hover{
+        .icon{
+            i{
+                @include transform(scale(1.2)rotateY(360deg));
+            }
+        }
+        .content{
+            .title{
+                color: $base-color;
+            }
+        }
+    }
+    .icon{
+        display: block;
+        width: 80px;
+        height: 80px;
+        text-align: center;
+        line-height: 80px;
+        border-radius: 50%;
+        background-image: -moz-linear-gradient( 50deg, rgb(112,191,236) 0%, rgb(106,48,255) 99%);
+        background-image: -webkit-linear-gradient( 50deg, rgb(112,191,236) 0%, rgb(106,48,255) 99%);
+        background-image: -ms-linear-gradient( 50deg, rgb(112,191,236) 0%, rgb(106,48,255) 99%);
+        font-size: 40px;
+        color: $white;
+        margin: 0 auto;
+        margin-bottom: 25px;
+        i{
+            @include transition($transition);
+            display: inline-block;
+        }
+    }
+    .content{
+        .title{
+            font-size: 24px;
+            line-height: 34px;
+            font-weight: 600;
+            @include transition($transition);
+        }
+        p{}
+    }
+}

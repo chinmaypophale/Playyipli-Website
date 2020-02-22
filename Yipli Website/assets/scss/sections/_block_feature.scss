@@ -1,0 +1,38 @@
+/*---------------------------
+    Block Feature
+---------------------------*/
+.block-feature-area{
+    .bottom-image{}    
+}
+.single-block-feature{
+    display: flex;
+    align-self: flex-start;
+    margin-bottom: 10px;
+    &:hover{
+        .icon{
+            @include transform(scale(1.1)rotateY(360deg))
+        }
+        .content{
+            .title{
+                color: $base-color;
+            }
+        }
+    }
+    .icon{
+        font-size: 50px;
+        line-height: 50px;
+        color: $base-color;
+        margin-right: 20px;
+        @include transition($transition);
+    }
+    .content{
+        flex: 1;
+        .title{
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            @include transition($transition);
+        }
+        p{}
+    }
+}

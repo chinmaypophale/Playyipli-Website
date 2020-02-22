@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="zxx">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Yipli | Checkout Product</title>
+    <!-- favicon -->
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <!-- fontawesome -->
+    <link rel="stylesheet" href="assets/css/fontawesome.min.css">
+    <!-- Pe icon 7 stroke -->
+    <link rel="stylesheet" href="assets/css/flaticon.css">
+    <!-- animate -->
+    <link rel="stylesheet" href="assets/css/animate.css">
+    <!-- Owl Carousel -->
+    <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+    <!-- magnific popup -->
+    <link rel="stylesheet" href="assets/css/magnific-popup.css">
+    <!-- stylesheet -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- responsive -->
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <!-- angularJS -->
+    <script src="assets/js/angular.min.js"></script>
+    
+    <!-- Bootstrap core CSS -->
+            <!--<link href="../../../../dist/css/bootstrap.min.css" rel="stylesheet>-->
+            <!-- Custom styles for this template -->
+            <!--<link href="form-validation.css" rel="stylesheet">-->
+    
+</head>
+
+
+
+<body>
+    <script>
+    var app = angular.module("myApp", []);
+    app.controller('myController',function($scope){
+      $scope.qty=0;
+    });
+    </script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async
+src="https://www.googletagmanager.com/gtag/js?id=UA-157445594-1"></script>
+<script>
+   window.dataLayer = window.dataLayer || [];
+   function gtag(){dataLayer.push(arguments);}
+   gtag('js', new Date());
+
+   gtag('config', 'UA-157445594-1');
+</script>
+
+        <!-- navbar area start -->
+        <nav class="navbar navbar-area navbar-expand-lg">
+                    <div class="container nav-container">
+                        <div class="logo-wrapper navbar-brand">
+                            <a href="index.html" class="logo ">
+                                <img src="assets/img/websitelogo.png" alt="logo">
+                            </a>
+                        </div>
+                        <div class="collapse navbar-collapse" id="cgency">
+                            <!-- navbar collapse start -->
+                            <ul class="navbar-nav" id="primary-menu">
+                                <!-- navbar- nav -->
+
+                                <li class="nav-item">
+                                    <a class="nav-link" href="index.html#featuresofyipli">Mat</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="games.html">Games</a>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link" href="liveclasses.html">Live Classes</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="faqs.html">FAQs</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="checkout.html"><i class="fas fa-shopping-cart"></i></a>
+                                </li>
+
+
+                            </ul>
+                            <!-- /.navbar-nav -->
+                        </div>
+                        <!-- /.navbar btn wrapper -->
+                        <div class="responsive-mobile-menu">
+                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#cgency" aria-controls="cgency"
+                                aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                        </div>
+                        <!-- navbar collapse end -->
+                    </div>
+                </nav>
+        <!-- navbar area end -->
+
+            
+          
+
+          <div class="bg-light">
+
+            <div class="container">
+              <div ng-app="myApp" ng-controller="myController">
+              <div class="py-5 text-center">
+                <!-- <img class="d-block mx-auto mb-4" src="https://getbootstrap.com/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72"> -->
+                <h2>Checkout Details</h2>
+                <!-- <p class="lead">Below is an example form built entirely with Bootstrap's form controls. Each required form group has a validation state that can be triggered by attempting to submit the form without completing it.</p> -->
+              </div>
+
+
+
+
+
+
+              <div class="row">
+                <div class="col-md-4 order-md-2 mb-4">
+                  <h4 class="d-flex justify-content-between align-items-center mb-3">
+                    <span class="text-muted">Your cart</span>
+                    <span class="badge badge-secondary badge-pill">{{qty}}</span>
+                  </h4>
+                  <ul class="list-group mb-3">
+
+                     <li class="list-group-item d-flex justify-content-between lh-condensed">
+                      <div>
+                      <!--   <h6 class="my-0">Product Price</h6> -->
+                        <div class="my-0">
+                            <h4 style="text-align: center;">
+                            Book your 
+                            <span class="text-muted" style="color: #616ad1 !important">YIPLI</span>
+                            mat now and get 6 months subscription <span class="text-muted" style="color: red !important">FREE</span>
+                            </h4>
+
+                          <small  style="font-size: 90%;" class="text-muted">MAT + Six Months Subscription = Rs.8000</small>
+                       </div>
+                      </div>
+                     
+
+                    </li>
+
+
+                    <li class="list-group-item d-flex justify-content-between lh-condensed">
+                      <div>
+                      <!--   <h6 class="my-0">Product Price</h6> -->
+                        <h6 class="my-0">Booking Price</h6>
+                        <small class="text-muted">Quantity</small>
+                      </div>
+                      <span class="text-muted">100</span><br>
+                      <span class="text-muted">{{qty}}</span>
+
+                    </li>
+
+                    <li class="list-group-item d-flex justify-content-between">
+                      <span>Total (INR)</span>
+                      <strong>Rs. {{qty*100}}</strong>
+                    </li>
+                  </ul>
+
+                  <!-- <form class="card p-2">
+                    <div class="input-group">
+                      <input type="text" class="form-control" placeholder="Promo code">
+                      <div class="input-group-append">
+                        <button type="submit" class="btn btn-secondary">Redeem</button>
+                      </div>
+                    </div>
+                  </form>
+         -->
+
+                </div>
+                <div class="col-md-8 order-md-1">
+                  <h4 class="mb-3">Billing Details</h4>
+
+                  <form class="needs-validation" novalidate action="pay.php" method="post">
+                    <!-- firstname  lastname  qty  mobileno -->
+                    <div class="row">
+                      <!-- firstname -->
+                      <div class="col-md-6 mb-3">
+                        <label for="firstName">First name</label>
+                        <input type="text" class="form-control" id="firstName" name="firstname" placeholder="" value="" required>
+                        <div class="invalid-feedback">
+                          Valid first name is required.
+                        </div>
+                      </div>
+                      <!-- lastname -->
+                      <div class="col-md-6 mb-3">
+                        <label for="lastName">Last name</label>
+                        <input type="text" class="form-control" id="lastName" name="lastname" placeholder="" value="" required>
+                        <div class="invalid-feedback">
+                          Valid last name is required.
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-md-6 mb-3">
+                          <label for="qty">Quantity</label>
+
+                            <input type="number" min="1" class="form-control" id="qty" name="qty" placeholder="1" ng-model="qty" required>
+
+                        <div class="invalid-feedback">
+                          Valid first name is required.
+                        </div>
+                      </div>
+
+                    </div>
+
+
+
+                   <!--  <div class="mb-3">
+                      <label for="username">Username</label>
+                      <div class="input-group">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text">@</span>
+                        </div>
+                        <input type="text" class="form-control" id="username" placeholder="Username" required>
+                        <div class="invalid-feedback" style="width: 100%;">
+                          Your username is required.
+                        </div>
+                      </div>
+                    </div> -->
+
+                    <div class="mb-3">
+                      <label for="email">Email <span class="text-muted">
+
+                      </span></label>
+                      <input type="email" class="form-control" id="email" name="email" placeholder="you@example.com">
+                      <div class="invalid-feedback">
+                        Please enter a valid email address for shipping updates.
+                      </div>
+                    </div>
+
+                    <div class="mb-3">
+                      <label for="phone">Mobile No <span class="text-muted">
+                      </span></label>
+                      <input type="tel" class="form-control" id="mobileno" name="mobileno" placeholder="Mobile No.">
+                      <div class="invalid-feedback">
+                        Please enter Valid Mobile No.
+                      </div>
+                    </div>
+
+                    <div class="mb-3">
+                      <label for="address">Address</label>
+                      <input type="text" class="form-control" id="address" name="address" placeholder="Shipping Address" required>
+                      <div class="invalid-feedback">
+                        Please enter your shipping address.
+                      </div>
+                    </div>
+
+                    <div class="mb-3">
+                      <label for="address2">Address 2 <span class="text-muted">(Optional)</span></label>
+                      <input type="text" class="form-control" id="address2" name="address2" placeholder="Apartment or suite">
+                    </div>
+
+                    <div class="row">
+                      <div class="col-md-5 mb-3">
+                        <label for="country">Country</label>
+                        <select class="custom-select d-block w-100" id="country" required>
+                          <option value="">Choose...</option>
+                          <!-- <option>United States</option> -->
+                          <option>India</option>
+                        </select>
+                        <div class="invalid-feedback">
+                          Please select a valid country.
+                        </div>
+                      </div>
+                      <div class="col-md-4 mb-3">
+                        <label for="state">State</label>
+                        <select class="custom-select d-block w-100" id="state" required>
+                          <option value="">Choose...</option>
+                          <!-- <option>California</option> -->
+                          <option>Maharashtra</option>
+                        </select>
+                        <div class="invalid-feedback">
+                          Please provide a valid state.
+                        </div>
+                      </div>
+                      <div class="col-md-3 mb-3">
+                        <label for="zip">Zip</label>
+                        <input type="text" class="form-control" id="zip" name="zip" placeholder="" required>
+                        <div class="invalid-feedback">
+                          Zip code required.
+                        </div>
+                      </div>
+                    </div>
+                    <!-- <hr class="mb-4"> -->
+                   <!--  <div class="custom-control custom-checkbox">
+                      <input type="checkbox" class="custom-control-input" id="same-address">
+                      <label class="custom-control-label" for="same-address">Shipping address is the same as my billing address</label>
+                    </div>
+                    <div class="custom-control custom-checkbox">
+                      <input type="checkbox" class="custom-control-input" id="save-info">
+                      <label class="custom-control-label" for="save-info">Save this information for next time</label>
+                    </div>
+                    <hr class="mb-4">
+
+                    <h4 class="mb-3">Payment</h4>
+
+                    <div class="d-block my-3">
+                      <div class="custom-control custom-radio">
+                        <input id="credit" name="paymentMethod" type="radio" class="custom-control-input" checked required>
+                        <label class="custom-control-label" for="credit">Credit card</label>
+                      </div>
+                      <div class="custom-control custom-radio">
+                        <input id="debit" name="paymentMethod" type="radio" class="custom-control-input" required>
+                        <label class="custom-control-label" for="debit">Debit card</label>
+                      </div>
+                      <div class="custom-control custom-radio">
+                        <input id="paypal" name="paymentMethod" type="radio" class="custom-control-input" required>
+                        <label class="custom-control-label" for="paypal">Paypal</label>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-6 mb-3">
+                        <label for="cc-name">Name on card</label>
+                        <input type="text" class="form-control" id="cc-name" placeholder="" required>
+                        <small class="text-muted">Full name as displayed on card</small>
+                        <div class="invalid-feedback">
+                          Name on card is required
+                        </div>
+                      </div>
+                      <div class="col-md-6 mb-3">
+                        <label for="cc-number">Credit card number</label>
+                        <input type="text" class="form-control" id="cc-number" placeholder="" required>
+                        <div class="invalid-feedback">
+                          Credit card number is required
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-3 mb-3">
+                        <label for="cc-expiration">Expiration</label>
+                        <input type="text" class="form-control" id="cc-expiration" placeholder="" required>
+                        <div class="invalid-feedback">
+                          Expiration date required
+                        </div>
+                      </div>
+                      <div class="col-md-3 mb-3">
+                        <label for="cc-expiration">CVV</label>
+                        <input type="text" class="form-control" id="cc-cvv" placeholder="" required>
+                        <div class="invalid-feedback">
+                          Security code required
+                        </div>
+                      </div>
+                    </div> -->
+                    <hr class="mb-4">
+                    <button class="btn btn-primary btn-lg btn-block" type="submit">Continue to checkout</button>
+                  </form>
+                </div>
+
+              </div>
+              </div>
+
+              <footer class="my-5 pt-5 text-muted text-center text-small">
+                <!-- <p class="mb-1">&copy; 2017-2018 Company Name</p> -->
+                <!-- <ul class="list-inline">
+                  <li class="list-inline-item"><a href="#">Privacy</a></li>
+                  <li class="list-inline-item"><a href="#">Terms</a></li>
+                  <li class="list-inline-item"><a href="#">Support</a></li>
+                </ul> -->
+              </footer>
+            </div>
+
+            <!-- Bootstrap core JavaScript
+            ================================================== -->
+            <!-- Placed at the end of the document so the pages load faster -->
+            <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+            <script>window.jQuery || document.write('<script src="../../../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+            <script src="../../../../assets/js/vendor/popper.min.js"></script>
+            <script src="../../../../dist/js/bootstrap.min.js"></script>
+            <script src="../../../../assets/js/vendor/holder.min.js"></script>
+            <script>
+              // Example starter JavaScript for disabling form submissions if there are invalid fields
+              (function() {
+                'use strict';
+
+                window.addEventListener('load', function() {
+                  // Fetch all the forms we want to apply custom Bootstrap validation styles to
+                  var forms = document.getElementsByClassName('needs-validation');
+
+                  // Loop over them and prevent submission
+                  var validation = Array.prototype.filter.call(forms, function(form) {
+                    form.addEventListener('submit', function(event) {
+                      if (form.checkValidity() === false) {
+                        event.preventDefault();
+                        event.stopPropagation();
+                      }
+                      form.classList.add('was-validated');
+                    }, false);
+                  });
+                }, false);
+              })();
+            </script>
+
+
+
+
+
+
+
+                    <!-- footer area start -->
+                    <footer class="footer-area padding-50">
+
+                      <div class="container">
+
+
+
+
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="footer-inner text-center">
+                                      <!-- <div class="row">
+
+                                          <div class="col-sm-4">
+                                              <div class="footer-inner">
+                                                  <h4>Quick Links</h4>
+                                                  <ul>
+                                                    <li><a href="#">About us</a></li>
+                                                    <li><a href="contactus.html">Contact us</a></li>
+                                                    <li><a href="careers.html">Careers</a></li>
+                                                  </ul>
+                                              </div>
+                                          </div>
+                                          <div class="col-sm-6">
+                                              <div class="footer-inner ">
+                                                  <h4>Reach us</h4>
+                                              </div>
+                                          </div>
+                                      </div> -->
+                                      <div class="bottom-navbar padding-bottom-30">
+                                        <a href="aboutus.html">About us</a>
+                                        <a href="careers.html">Careers</a>
+                                        <a href="termsconditions.html">Terms</a>
+                                        <a href="contactus.html">Contact</a>
+                                      </div>
+
+
+                                        <ul class="social-icon">
+                                            <li><a href="index.html" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+                                            <li><a href="https://twitter.com/Yipli1" target="_blank"><i class="fab fa-twitter"></i></a></li>
+                                            <!-- <li><a href="#"><i class="fab fa-google-plus-g"></i></a></li> -->
+                                            <li><a href="https://www.instagram.com/playyipli/" target="_blank"><i class="fab fa-instagram"></i></a></li>
+                                            <li><a href="https://www.youtube.com/channel/UCJJQkX4wp882Qz1kozt-_2g?view_as=subscriber" target="_blank"><i class="fab fa-youtube"></i></a></li>
+                                        </ul>
+
+                                        <div class="copyright-text margin-top-30">
+                                            &copy; Copyrights 2020 Fitmat Smart Solutions Pvt. Ltd. All rights reserved. Powered By <a href="http://dexterlabs.co.in/"> Dexter Labs</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </footer>
+                    <!-- footer area end -->
+
+
+                    <div class="back-to-top base-color-2">
+                            <i class="fas fa-rocket"></i>
+                    </div>
+
+                        <!-- jquery -->
+                        <script src="assets/js/jquery.js"></script>
+                        <!-- popper -->
+                        <script src="assets/js/popper.min.js"></script>
+                     <!-- bootstrap -->
+                        <script src="assets/js/bootstrap.min.js"></script>
+                        <!-- owl carousel -->
+                        <script src="assets/js/owl.carousel.min.js"></script>
+                        <!-- magnific popup -->
+                        <script src="assets/js/jquery.magnific-popup.js"></script>
+                        <!-- wow js-->
+                        <script src="assets/js/wow.min.js"></script>
+                        <!-- tweenmax js-->
+                        <script src="assets/js/TweenMax.js"></script>
+                        <!-- mouseover parallax js-->
+                        <script src="assets/js/mousemoveparallax.js"></script>
+                        <!-- contact js-->
+                        <script src="assets/js/contact.js"></script>
+                        <!-- main -->
+                        <script src="assets/js/main.js"></script>
+
+
+
+                    <!-- Whats App ICON Added -->
+                        <style>
+                    #social_side_links {
+                     position: fixed;
+                      bottom: 0px;
+                      left:-20px;
+                      /* padding:0px; */
+                      list-style: none;
+                      z-index: 99;
+                    }
+
+                    #social_side_links li a {display: block;}
+
+                    #social_side_links li a img {
+                     display: block;
+                     max-width:100%;
+                      padding:7px;
+                      -webkit-transition:  background .2s ease-in-out;
+                      -moz-transition:  background .2s ease-in-out;
+                      -o-transition:  background .2s ease-in-out;
+                      transition:  background .2s ease-in-out;
+                    }
+
+                    /* #social_side_links li a:hover img {background: rgba(0, 0, 0, .2);} */
+                    </style>
+                    
+                    <ul id="social_side_links">
+                     <li><a target="_blank" href="https://api.whatsapp.com/send?phone=919860075688&text=We are interested in Your Product. Please Contact Me">
+                         <img src="whatsapp.png" width="60" height="60" border="0" alt=""></a></li>
+
+                    </ul>
+
+
+
+                    <style>
+                     @media only screen and (min-width:600px) {
+                                .hide-on-desktop, * [aria-labelledby='hide-on-desktop'] {
+                                    display: none;
+                                    max-height: 0;
+                                    overflow: hidden;
+                                }
+                            }
+                    #social_side_links1 {
+                     position: fixed;
+                      bottom: 50px;
+                      Right: 0;
+                      padding:0px;
+                      list-style: none;
+                      z-index: 99;
+                    }
+
+                    #social_side_links1 li a {display: block;}
+
+                    #social_side_links1 li a img {
+                     display: block;
+                     max-width:100%;
+                      padding:7px;
+                      -webkit-transition:  background .2s ease-in-out;
+                     animation: shake 0.5s;
+                      animation-iteration-count: infinite;
+                      -moz-transition:  background .2s ease-in-out;
+                      -o-transition:  background .2s ease-in-out;
+                      transition:  background .2s ease-in-out;
+                    }
+                    @keyframes shake {
+                      0% { transform: translate(1px, 1px) rotate(0deg); }
+                      10% { transform: translate(-1px, -2px) rotate(-1deg); }
+                      20% { transform: translate(-3px, 0px) rotate(1deg); }
+                      30% { transform: translate(3px, 2px) rotate(0deg); }
+                      40% { transform: translate(1px, -1px) rotate(1deg); }
+                      50% { transform: translate(-1px, 2px) rotate(-1deg); }
+                      60% { transform: translate(-3px, 1px) rotate(0deg); }
+                      70% { transform: translate(3px, 1px) rotate(-1deg); }
+                      80% { transform: translate(-1px, -1px) rotate(1deg); }
+                      90% { transform: translate(1px, 2px) rotate(0deg); }
+                      100% { transform: translate(1px, -2px) rotate(-1deg); }
+                    }
+
+                     #callmeMain {
+
+
+                        -webkit-animation: zcwmini2 1.5s 0s ease-out infinite;
+                        -moz-animation: zcwmini2 1.5s 0s ease-out infinite;
+                        animation: zcwmini2 1.5s 0s ease-out infinite;
+                    }
+
+                    #social_side_links1 li a:hover img {background: rgba(0, 0, 0, .2);}
+
+
+
+                    </style>
+
+                
+
+
+                    </body>
+
+                    </html>

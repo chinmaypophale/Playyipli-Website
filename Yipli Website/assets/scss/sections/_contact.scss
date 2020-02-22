@@ -1,0 +1,88 @@
+/*-----------------------
+    Contact Area
+----------------------*/
+.contact-area {
+    &.contact-bg{
+        background-image: url(../img/bg/contact.jpg);
+        background-image: cover;
+        background-position: cover;
+    }
+}
+.contact-info-area{
+    .title{
+        font-size: 46px;
+        line-height: 56px;
+        font-weight: 600;
+    }
+    
+}
+
+.contact-info-list{
+    margin: 0;
+    padding: 0;
+    margin-top: 55px;
+    list-style: none;
+    .single-info-item{
+        margin-bottom: 30px;
+        display: flex;
+        align-self: flex-start;
+        &:last-child{
+            margin-bottom: 0;
+        }
+        &:hover{
+            .content{
+                .details{
+                    color: $base-color;
+                }
+            }
+        }
+        .icon{
+            margin-right: 20px;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            line-height: 60px;
+            text-align: center;
+            background-image: -moz-linear-gradient( 50deg, rgb(112,191,236) 0%, rgb(106,48,255) 99%);
+            background-image: -webkit-linear-gradient( 50deg, rgb(112,191,236) 0%, rgb(106,48,255) 99%);
+            background-image: -ms-linear-gradient( 50deg, rgb(112,191,236) 0%, rgb(106,48,255) 99%);
+            color: $white;
+            font-size: 25px;
+        }
+        .content{
+            flex: 1;
+            .details{
+                display: block;
+                @include transition($transition);
+            }
+        }
+    }
+}
+
+.contact-form{
+    .form-group{
+        .form-control{
+            @include placeholder-color(#7f7c96);
+            height: 50px;
+            padding: 0 20px;
+            border: 1px solid rgba(#000,.1);
+            &.error{
+                border: 1px solid $danger;
+            }
+        }
+        &.textarea{
+            .form-control{
+                min-height: 210px;
+                resize: none;
+                padding: 20px;
+            }
+        }
+    }
+    .submit-btn{
+        padding:0;
+        width: 160px;
+        height: 50px;
+        line-height: 50px;
+        border-radius: 5px;
+    }
+}

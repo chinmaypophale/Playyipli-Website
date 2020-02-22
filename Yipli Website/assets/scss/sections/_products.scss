@@ -1,0 +1,87 @@
+/*---------------------
+    Our Products
+---------------------*/
+.product-area{
+    .section-title{
+        // margin-bottom: 65px;
+    }
+}
+.product-carousel{
+    .owl-nav div{
+        position: absolute;
+        left: -60px;
+        top: 50%;
+        margin-top: -20px;
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+        text-align: center;
+        border: 1px solid rgba(#000,.2);
+        @include transform(translateY(-50%));
+        &:hover{
+            background-image: -moz-linear-gradient( 50deg, rgb(112,191,236) 0%, rgb(106,48,255) 99%);
+            background-image: -webkit-linear-gradient( 50deg, rgb(112,191,236) 0%, rgb(106,48,255) 99%);
+            background-image: -ms-linear-gradient( 50deg, rgb(112,191,236) 0%, rgb(106,48,255) 99%);
+            color: $white;
+        }
+        &.owl-next{
+            left: auto;
+            right: -60px;
+        }
+    }
+}
+.single-product-item{
+    display: inline-block;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.12);
+    margin-bottom: 30px;
+    &:hover{
+        .content{
+            .title{
+                a{
+                    color: $base-color;
+                }
+            }
+        }
+    }
+    .thumb{
+    }
+    .content{
+        text-align: center;
+        padding: 23px 0 30px 0;
+        .title{
+            font-size: 22px;
+            line-height: 30px;
+            font-weight: 600;
+            a{
+                @include transition($transition);
+                &:hover{
+                    color: $base-color;
+                }
+            }
+        }
+        .price-wrap{
+            font-weight: 600;
+            font-size: 16px;
+            margin-bottom: 25px;
+            .price{
+                color: $heading-color;
+            }
+            del{}
+        }
+        .boxed-bt{
+            padding: 10px 25px;
+            background-color: $base-color;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            border-radius: 30px;
+            font-size: 14px;
+            color: $white;
+            @include transition($transition);
+            &:hover{
+                background-color: $secondary-color;
+                color: $white;
+            }
+        }
+    }
+}
